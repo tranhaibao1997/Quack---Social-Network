@@ -1,8 +1,10 @@
 let maxChar = 140;
-let tweetArea = document.getElementById("input")
+let tweetArea = document.getElementById("input").value
+
 tweetArea.addEventListener("input", (event) => {
-    document.getElementById("remain").innerHTML = `remaining :${maxChar- event.target.value.length}`
-    if (event.target.value.length > maxChar) {
+    let reamainText = maxChar - event.target.value.length
+    document.getElementById("remain").innerHTML = `remaining :${reamainText}`
+    if (reamainText > maxChar) {
         document.getElementById("remain").innerHTML = ``
     }
 })
