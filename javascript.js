@@ -18,15 +18,21 @@ function remainder() {
 function post() {
     let remainText = maxChar - event.target.value.length
     message = document.getElementById("input").value
+    num=0
     let quack = {
-        'content': message,
-        'isLike': false
+        'content':  findHashtag(message),
+        'id': num,
+        'isLike': false,
+        'isRetweet': false,
+        'parents': null,
     }
+    num++
     quackMessage.push(quack)
     console.log(quackMessage)
     render(quackMessage)
     document.getElementById("input").value = ''
     document.getElementById("remain").innerHTML = `${remainText} characters left`
+   
 }
 
 function toggleLike(position) {
@@ -66,8 +72,11 @@ function retweet(position) {
 
     let quack = {
         'content': quackMessage[position].content,
-        'isLike': false
+        'isLike': false,
+        'isRetweet': true,
+        'parents': quackMessage[position].id
     }
+    quackMessage[position].id.isRetweet = true
     console.log(position)
     quackMessage.push(quack)
     render(quackMessage)
@@ -75,7 +84,15 @@ function retweet(position) {
 }
 
 function findHashtag(message) {
-    if (message.startsWith('#')) {
-        let hashtagArray=message.split(" ").filter(elm => elm.startsWith("#"));
-    }
+    let Array = message.split(" ").map(elm => {
+        if(elm.startsWith("#"))
+        {
+            return `<a href="#">${elm}</a>`
+        }
+       
+            return elm
+        
+    })
+   return Array.join(" ")
+    
 }
