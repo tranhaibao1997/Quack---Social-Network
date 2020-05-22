@@ -49,18 +49,27 @@ const render = (list) => {
     console.log(list)
     let quackHtml = list.map((item, index) => {
         if (item.isLike == false) {
-            return `${item.content}
-            <span onclick="toggleLike(${index})"><i class="far fa-star"></i></span>
-            <span onclick="retweet(${index})"><i class="fas fa-retweet"></i></span>
-            <span onclick="remove(${index})"><i class="fas fa-trash-alt"></i></span>`
+            return `<div class="qAreaFormat">
+            ${item.content}
+            <div>
+            <span onclick="toggleLike(${index})"><i class="far fa-star fa-lg iconFormat star"></i></span>
+            <span onclick="retweet(${index})"><i class="fas fa-retweet fa-lg iconFormat retweet"></i></span>
+            <span><i class="far fa-comment fa-lg iconFormat comment"></i></span>
+            <span onclick="remove(${index})"><i class="fas fa-trash-alt fa-lg iconFormat trash"></i></span>
+            </div>
+            </div>`
         } else {
-            return `${item.content}
-            <span onclick="toggleLike(${index})"><i class="fas fa-star"></i></span>
-            <span onclick="retweet(${index})"><i class="fas fa-retweet"></i></span>
-            <span onclick="remove(${index})"><i class="fas fa-trash-alt"></i></span>`
+            return `<div class="qAreaFormat">
+            ${item.content}
+            <div>
+            <span onclick="toggleLike(${index})"><i class="fas fa-star fa-lg iconFormat star"></i></span>
+            <span onclick="retweet(${index})"><i class="fas fa-retweet fa-lg iconFormat retweet"></i></span>
+            <span onclick="remove(${index})"><i class="fas fa-trash-alt fa-lg iconFormat trash"></i></span>
+            </div>
+            </div>`
         }
     })
-    document.getElementById("quackArea").innerHTML = quackHtml
+    document.getElementById("quackArea").innerHTML = quackHtml.join(" ")
 }
 
 function remove(index) {

@@ -15,50 +15,96 @@
 <body>
     <div id="entireWebpage">
         <div id="left-column">
-            <div class="row logo-area">
+            <div class="logoRow logo-area">
                 <img src="images/Quack-Logo.png" width="80px" height="80px" class="logo">
                 <h3>Quack</h3>
             </div>
             <div id="navbar">
                 <div class="row">
-                    <i class="fas fa-home fa-2x icon"></i>
+                    <i class="fas fa-home fa-2x icon" style="color:#4b5aad"></i>
                     <h2>Home</h2>
                 </div>
                 <div class="row">
-                    <i class="fas fa-globe fa-2x icon"></i>
+                    <i class="fas fa-globe fa-2x icon" style="color:#6f5cae"></i>
                     <h2>Explore</h2>
                 </div>
                 <div class="row">
-                    <i class="fas fa-bell fa-2x icon"></i>
+                    <i class="fas fa-bell fa-2x icon" style="color:#9181da"></i>
                     <h2>Notifications</h2>
                 </div>
                 <div class="row">
-                    <i class="fas fa-envelope fa-2x icon"></i>
+                    <i class="fas fa-envelope fa-2x icon" style="color:#87d0e1"></i>
                     <h2>Messages</h2>
                 </div>
                 <div class="row">
-                    <i class="fas fa-bookmark fa-2x icon"></i>
+                    <i class="fas fa-bookmark fa-2x icon" style="color:#59abd1"></i>
                     <h2>Bookmarks</h2>
                 </div>
                 <div class="row">
-                    <i class="fas fa-clipboard-list fa-2x icon"></i>
+                    <i class="fas fa-clipboard-list fa-2x icon" style="color:#fe9ec4"></i>
                     <h2>Lists</h2>
                 </div>
                 <div class="row">
-                    <i class="fas fa-user-circle fa-2x icon"></i>
+                    <i class="fas fa-user-circle fa-2x icon" style="color:#fe7064"></i>
                     <h2>Profile</h2>
                 </div>
                 <div class="row">
-                    <i class="fas fa-comment-dots fa-2x icon"></i>
+                    <i class="fas fa-comment-dots fa-2x icon" style="color:#e45887"></i>
                     <h2>More</h2>
                 </div>
             </div>
         </div>
         <div id="quackColumn">
             <textarea type="text" placeholder="What's quackin'?" id="input"></textarea>
-            <button id="btn-post" onclick="post()">Quack</button>
-            <div id="remain"></div>
+            <div>
+                <button id="btn-post" onclick="post()" class="qButton">Quack</button>
+                <span id="remain"></span>
+            </div>
             <div id="quackArea"></div>
+        </div>
+        <div id="rightColumn">
+            <input type="text" class="searchBar" placeholder="Search...">
+            <div id="whoToFollow" class="rightFormat">
+                <div>
+                    <h4>Who to Follow</h4>
+                </div>
+                <div class="wtf-row">
+                    <div>
+                        <img src="images/NY-Logo.png" width="40px" height="40px" class="small-logo">
+                    </div>
+                    <div>
+                        <div style="font-weight: bolder">The New York Times</div>
+                        <div>@NYTimes</div>
+                    </div>
+                </div>
+                <div class="wtf-row">
+                    <div>
+                        <img src="images/AJ-Logo.png" width="40px" height="40px" class="small-logo">
+                    </div>
+                    <div>
+                        <div style="font-weight: bolder">Al Jazeera</div>
+                        <div>@AJEnglish</div>
+                    </div>
+                </div>
+                <div class="wtf-row">
+                    <div>
+                        <img src="images/Buzzfeed-Logo.png" width="40px" height="40px" class="small-logo">
+                    </div>
+                    <div>
+                        <div style="font-weight: bolder">BuzzFeed</div>
+                        <div>@BuzzFeed</div>
+                    </div>
+                </div>
+            </div>
+            <div id="trending" class="rightFormat">
+                <h4>Trending</h4>
+                <p class="hashFont">#CoderSchool</p>
+                <p class="qNum">320K Quacks</p>
+                <p class="hashFont">#Bitna</p>
+                <p class="qNum">179 Quacks</p>
+                <p class="hashFont">#Mojave</p>
+                <p class="qNum">5,864 Quacks</p>
+            </div>
         </div>
     </div>
     <script src="javascript.js"></script>
