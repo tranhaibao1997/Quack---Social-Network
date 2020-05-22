@@ -5,15 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quack - Social Network</title>
+    <link rel="icon" href="images/Quack-Logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a8c4c24db6.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <textarea type="text" placeholder="What's quackin'?" id="input"></textarea>
-    <button id="btn-post" onclick="post()">Quack</button>
-    <div id="remain"></div>
-    <div id="quackArea"></div>
+    <div id="entireWebpage">
+        <div id="left-column">
+            <div class="row logo-area">
+                <img src="images/Quack-Logo.png" width="80px" height="80px" class="logo">
+                <h3>Quack</h3>
+            </div>
+            <div id="navbar">
+                <div class="row">
+                    <i class="fas fa-home fa-2x icon"></i>
+                    <h2>Home</h2>
+                </div>
+                <div class="row">
+                    <i class="fas fa-globe fa-2x icon"></i>
+                    <h2>Explore</h2>
+                </div>
+                <div class="row">
+                    <i class="fas fa-bell fa-2x icon"></i>
+                    <h2>Notifications</h2>
+                </div>
+                <div class="row">
+                    <i class="fas fa-envelope fa-2x icon"></i>
+                    <h2>Messages</h2>
+                </div>
+                <div class="row">
+                    <i class="fas fa-bookmark fa-2x icon"></i>
+                    <h2>Bookmarks</h2>
+                </div>
+                <div class="row">
+                    <i class="fas fa-clipboard-list fa-2x icon"></i>
+                    <h2>Lists</h2>
+                </div>
+                <div class="row">
+                    <i class="fas fa-user-circle fa-2x icon"></i>
+                    <h2>Profile</h2>
+                </div>
+                <div class="row">
+                    <i class="fas fa-comment-dots fa-2x icon"></i>
+                    <h2>More</h2>
+                </div>
+            </div>
+        </div>
+        <div id="quackColumn">
+            <textarea type="text" placeholder="What's quackin'?" id="input"></textarea>
+            <button id="btn-post" onclick="post()">Quack</button>
+            <div id="remain"></div>
+            <div id="quackArea"></div>
+        </div>
+    </div>
     <script src="javascript.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js"></script>
 
