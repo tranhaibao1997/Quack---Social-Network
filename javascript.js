@@ -363,7 +363,7 @@ function reQuack(index) {
     quackList.unshift(quack)
     renderList(quackList)
     updateLocalStorage(quackList)
-        // getTrending()
+    getTrending()
 }
 
 function filterHashTag(e) {
