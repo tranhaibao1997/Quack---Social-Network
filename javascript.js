@@ -2,14 +2,17 @@
 
 let quackList = [{"username":"haibaotran","avatar":"https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg","content":"<img src=\"https://quatangabc.com/images/hinhsinhnhat/avatar1.jpg\" alt=\"image\" width=\"50px\" height=\"50px\">","isReQuacked":false,"isLiked":false,"reQuackLevel":0,"likeBy":["haibaotran","Alyssa"],"hashTag":[],"peopleTag":[],"comments":[{"content":"so cute !!!","username":"Alyssa","avatar":"https://img.lovepik.com/element/40125/9858.png_860.png"}],"author":"haibaotran"},{"username":"Bitna","avatar":"https://zicxa.com/hinh-anh/wp-content/uploads/2020/02/T%E1%BB%95ng-h%E1%BB%A3p-h%C3%ACnh-%E1%BA%A3nh-avatar-h%C3%A0i-h%C6%B0%E1%BB%9Bc-nh%C3%ACn-l%C3%A0-b%E1%BA%ADt-c%C6%B0%E1%BB%9Di-1.jpg","content":"<a href=\"#\" data-hashtag=#quack onclick=\"filterHashTag(event)\">#quack</a> ","isReQuacked":false,"isLiked":false,"reQuackLevel":0,"likeBy":["Bitna","haibaotran"],"hashTag":["#quack"],"peopleTag":[],"comments":[],"author":"Bitna"},{"username":"Alyssa","avatar":"https://img.lovepik.com/element/40125/9858.png_860.png","content":"<a href=\"#\" data-hashtag=#frontend onclick=\"filterHashTag(event)\">#frontend</a> how can we get an element from input box anyone ?","isReQuacked":false,"isLiked":false,"reQuackLevel":0,"likeBy":["Bitna","haibaotran"],"hashTag":["#frontend"],"peopleTag":[],"comments":[{"content":"you can use getElementById","username":"Bitna","avatar":"https://zicxa.com/hinh-anh/wp-content/uploads/2020/02/T%E1%BB%95ng-h%E1%BB%A3p-h%C3%ACnh-%E1%BA%A3nh-avatar-h%C3%A0i-h%C6%B0%E1%BB%9Bc-nh%C3%ACn-l%C3%A0-b%E1%BA%ADt-c%C6%B0%E1%BB%9Di-1.jpg"}],"author":"Alyssa"},{"username":"Alyssa","avatar":"https://img.lovepik.com/element/40125/9858.png_860.png","content":"<a href=\"#\" data-hashtag=#coderschool onclick=\"filterHashTag(event)\">#coderschool</a> i love coding ","isReQuacked":true,"isLiked":false,"reQuackLevel":1,"likeBy":["haibaotran","Bitna"],"hashTag":["#coderschool"],"peopleTag":[],"comments":[],"originalUser":"haibaotran","originalUserAvatar":"https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg","reQuackComment":"Let's coding together everyone !!!"},{"username":"haibaotran","avatar":"https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg","content":"<a href=\"#\" data-hashtag=#coderschool onclick=\"filterHashTag(event)\">#coderschool</a> i love coding ","isReQuacked":false,"isLiked":false,"reQuackLevel":0,"likeBy":["haibaotran","charles","Bitna","Alyssa"],"hashTag":["#coderschool"],"peopleTag":[],"comments":[{"content":"me too !!! ","username":"Alyssa","avatar":"https://img.lovepik.com/element/40125/9858.png_860.png"},{"content":"coding makes me feel happy ^^","username":"Alyssa","avatar":"https://img.lovepik.com/element/40125/9858.png_860.png"},{"content":"Yeah i know :D","username":"haibaotran","avatar":"https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg"}],"author":"haibaotran"}]
 let maxInput = 100;
-let username = "Alyssa"
-let avatar = "https://img.lovepik.com/element/40125/9858.png_860.png"
+
+// let username=""
+// let avatar=""
+// let username = "Alyssa"
+// let avatar = "https://img.lovepik.com/element/40125/9858.png_860.png"
 
 // let username="Bitna"
 // let avatar="https://zicxa.com/hinh-anh/wp-content/uploads/2020/02/T%E1%BB%95ng-h%E1%BB%A3p-h%C3%ACnh-%E1%BA%A3nh-avatar-h%C3%A0i-h%C6%B0%E1%BB%9Bc-nh%C3%ACn-l%C3%A0-b%E1%BA%ADt-c%C6%B0%E1%BB%9Di-1.jpg"
 
-// let username = "haibaotran"
-// let avatar = "https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg"
+let username = "haibaotran"
+let avatar = "https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg"
 
 
 function getTrending() {
@@ -58,27 +61,46 @@ renderList(quackList)
 
 //render textarea
 function rederTextArea() {
-    return `
+    if(username=="" && avatar=="")
+    {
+return ``
+    }
+    else
+    {
+        return `
 
-   <div class="profile-info">
-    <div class="img-wrapper">
-        <img class="profile-avatar" src="${avatar}" alt="img">
-    </div>
-    </div>
+        <div class="profile-info">
+         <div class="img-wrapper">
+             <img class="profile-avatar" src="${avatar}" alt="img">
+         </div>
+         </div>
+     
+         <div class="text-area-section">
+             <textarea type="text" placeholder="What's quackin'?" id="input"></textarea>
+             <div>
+                 <button id="btn-post" onclick="post()" class="qButton">Quack</button>
+                 <span id="remain"></span>
+             </div>
+         </div>
+     
+     
+      `
+    }
 
-    <div class="text-area-section">
-        <textarea type="text" placeholder="What's quackin'?" id="input"></textarea>
-        <div>
-            <button id="btn-post" onclick="post()" class="qButton">Quack</button>
-            <span id="remain"></span>
-        </div>
-    </div>
-
-
- `
 }
 document.getElementById("quack-input").innerHTML = rederTextArea()
-document.getElementById("username").innerHTML = `Hello ${username}`
+if(username=="" & avatar=="")
+{
+    document.getElementById("username").innerHTML = `<a href="#">Sign up</a>`
+}
+else
+{
+    document.getElementById("username").innerHTML = `Hello <a onclick="changeAccount()" href="#" id="account" style="color:red;font-size:20px">${username}</a>`
+}
+
+
+
+
 
 
 //check textarea input  
@@ -197,7 +219,18 @@ function renderList(list) {
                     <ul class="showLike">
                     ${renderLikedList(item.likeBy)}
                     </ul>
+                    
                    
+                </div>
+                 <div class="comment-box">
+                <div class="input-section">
+                <div class="img-wrapper1">
+                <img src="${avatar}">
+                </div>
+                <input class="comment-input" type="text" placeholder="comment sth...">
+                <span><i class="fas fa-paper-plane" onclick="postComment(${index})"></i></span>
+                </div>
+                ${renderComments(item.comments)}
                 </div>
                 <div class=" qAreaFormat haibao-requack">
                 <div class="quack-info">
@@ -213,16 +246,7 @@ function renderList(list) {
                     </div>
                     </div>
                   
-                <div class="comment-box">
-                <div class="input-section">
-                <div class="img-wrapper1">
-                <img src="${avatar}">
-                </div>
-                <input class="comment-input" type="text" placeholder="comment sth...">
-                <span><i class="fas fa-paper-plane" onclick="postComment(${index})"></i></span>
-                </div>
-                ${renderComments(item.comments)}
-                </div>
+               
                     </div>
                     `
 
@@ -248,6 +272,16 @@ function renderList(list) {
                     ${renderLikedList(item.likeBy)}
                     </ul>
                 </div>
+                <div class="comment-box">
+                <div class="input-section">
+                <div class="img-wrapper1">
+                <img src="${avatar}">
+                </div>
+                <input class="comment-input" type="text" placeholder="comment sth...">
+                <span><i class="fas fa-paper-plane" onclick="postComment(${index})"></i></span>
+                </div>
+                ${renderComments(item.comments,index)}
+                </div>
                 <div class=" qAreaFormat haibao-requack">
                 <div class="quack-info">
                 <span>${item.originalUser}</span>
@@ -262,16 +296,7 @@ function renderList(list) {
                     </div>
                     </div>
                   
-                    <div class="comment-box">
-                    <div class="input-section">
-                    <div class="img-wrapper1">
-                    <img src="${avatar}">
-                    </div>
-                    <input class="comment-input" type="text" placeholder="comment sth...">
-                    <span><i class="fas fa-paper-plane" onclick="postComment(${index})"></i></span>
-                    </div>
-                    ${renderComments(item.comments,index)}
-                    </div>
+                   
                     </div>
                     `
 

@@ -6,6 +6,12 @@ body {
     background-color: #fec728;
     font-family: 'Lato', sans-serif;
 }
+#account
+{
+    color:mediumvioletred;
+    font-size:20px
+}
+
 
 #navbar {
     background-color: #fddc6e;
