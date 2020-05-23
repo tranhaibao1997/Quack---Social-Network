@@ -1,17 +1,17 @@
 let quackList = JSON.parse(localStorage.getItem('session')) || []
 let maxInput = 100;
-let username = "bitna"
-let avatar = "https://img.lovepik.com/element/40125/9858.png_860.png"
+// let username = "bitna"
+// let avatar = "https://img.lovepik.com/element/40125/9858.png_860.png"
 
 
-// let username = "haibaotran"
-// let avatar = "https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg"
+let username = "haibaotran"
+let avatar = "https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg"
 
 
 function getTrending() {
 
     let testArray = []
-    let hashTagArray = quackList.map(quack => {
+    quackList.map(quack => {
         for (let i = 0; i < quack.hashTag.length; i++) {
             testArray.push(quack.hashTag[i])
         }
@@ -30,11 +30,11 @@ function getTrending() {
         sortable.push([item, obj1[item]]);
     }
 
-    sortable.sort(function(a, b) {
+    sortable.sort(function (a, b) {
         return b[1] - a[1];
     });
     var objSorted = {}
-    sortable.forEach(function(item) {
+    sortable.forEach(function (item) {
         objSorted[item[0]] = item[1]
     })
     let myArray = Object.keys(objSorted)
@@ -141,6 +141,15 @@ function renderAuthorize(item, index) {
         return ``
     }
 }
+function renderCommentAuthorize(item, index,quackIndex) {
+    if (item.username == username) {
+        return `<span onclick="deleteComment(${index,quackIndex})"><i class="fas fa-trash-alt fa-lg iconFormat trash"></i></span>`
+    } else {
+        return `<span style="opacity:0"><i class="fas fa-trash-alt fa-lg iconFormat trash"></i></span>`
+    }
+}
+
+
 
 function renderLikedList(list) {
     let html = list.map(elm => ` <li>${elm}</li>`)
@@ -174,12 +183,13 @@ function renderList(list) {
                     <div class="btn-section">
                     <span onmouseover="showLike(${index})" onmouseout="hideLike(${index})" onclick="likeTweet(${index})"><i class="fas fa-star fa-lg iconFormat star">${item.likeBy.length}</i></span>
                     <span onclick="reQuack(${index})"><i class="fas fa-retweet fa-lg iconFormat retweet"></i></span>
-                    <span><i class="far fa-comment fa-lg iconFormat comment"></i></span>
+                    <span onclick="comment(${index})"><i class="far fa-comment fa-lg iconFormat comment">${item.comments.length}</i></span>
                    ${renderAuthorize(item, index)}
                     </div>
                     <ul class="showLike">
                     ${renderLikedList(item.likeBy)}
                     </ul>
+                   
                 </div>
                 <div class=" qAreaFormat haibao-requack">
                 <div class="quack-info">
@@ -195,7 +205,16 @@ function renderList(list) {
                     </div>
                     </div>
                   
-                
+                <div class="comment-box">
+                <div class="input-section">
+                <div class="img-wrapper1">
+                <img src="${avatar}">
+                </div>
+                <input class="comment-input" type="text" placeholder="comment sth...">
+                <span><i class="fas fa-paper-plane" onclick="postComment(${index})"></i></span>
+                </div>
+                ${renderComments(item.comments)}
+                </div>
                     </div>
                     `
 
@@ -214,7 +233,7 @@ function renderList(list) {
                     <div class="btn-section">
                     <span onmouseover="showLike(${index})" onmouseout="hideLike(${index})" onclick="likeTweet(${index})"><i class="far fa-star fa-lg iconFormat star">${item.likeBy.length}</i></span>
                     <span onclick="reQuack(${index})"><i class="fas fa-retweet fa-lg iconFormat retweet"></i></span>
-                    <span><i class="far fa-comment fa-lg iconFormat comment"></i></span>
+                    <span onclick="comment(${index})"><i class="far fa-comment fa-lg iconFormat comment">${item.comments.length}</i></span>
                    ${renderAuthorize(item, index)}
                     </div>
                     <ul class="showLike">
@@ -235,7 +254,16 @@ function renderList(list) {
                     </div>
                     </div>
                   
-                
+                    <div class="comment-box">
+                    <div class="input-section">
+                    <div class="img-wrapper1">
+                    <img src="${avatar}">
+                    </div>
+                    <input class="comment-input" type="text" placeholder="comment sth...">
+                    <span><i class="fas fa-paper-plane" onclick="postComment(${index})"></i></span>
+                    </div>
+                    ${renderComments(item.comments,index)}
+                    </div>
                     </div>
                     `
 
@@ -261,12 +289,22 @@ function renderList(list) {
                     <div class="btn-section">
                     <span onmouseover="showLike(${index})" onmouseout="hideLike(${index})" onclick="likeTweet(${index})"><i class="fas fa-star fa-lg iconFormat star">${item.likeBy.length}</i></span>
                     <span onclick="reQuack(${index})"><i class="fas fa-retweet fa-lg iconFormat retweet"></i></span>
-                    <span><i class="far fa-comment fa-lg iconFormat comment"></i></span>
+                    <span onclick="comment(${index})"><i class="far fa-comment fa-lg iconFormat comment">${item.comments.length}</i></span>
                    ${renderAuthorize(item, index)}
                     </div>
                     <ul class="showLike">
                     ${renderLikedList(item.likeBy)}
                     </ul>
+                    </div>
+                    <div class="comment-box">
+                    <div class="input-section">
+                    <div class="img-wrapper1">
+                    <img src="${avatar}">
+                    </div>
+                    <input class="comment-input" type="text" placeholder="comment sth...">
+                    <span><i class="fas fa-paper-plane" onclick="postComment(${index})"></i></span>
+                    </div>
+                    ${renderComments(item.comments)}
                     </div>
                     </div>`
             } else {
@@ -284,12 +322,22 @@ function renderList(list) {
                     <div class="btn-section">
                     <span onmouseover="showLike(${index})" onmouseout="hideLike(${index})" onclick="likeTweet(${index})"><i class="far fa-star fa-lg iconFormat star">${item.likeBy.length}</i></span>
                     <span onclick="reQuack(${index})"><i class="fas fa-retweet fa-lg iconFormat retweet"></i></span>
-                    <span><i class="far fa-comment fa-lg iconFormat comment"></i></span>
+                    <span onclick="comment(${index})"><i class="far fa-comment fa-lg iconFormat comment">${item.comments.length}</i></span>
                     ${renderAuthorize(item, index)}
                     </div>
                     <ul class="showLike">
                     ${renderLikedList(item.likeBy)}
                     </ul>
+                    </div>
+                    <div class="comment-box">
+                    <div class="input-section">
+                    <div class="img-wrapper1">
+                    <img src="${avatar}">
+                    </div>
+                    <input class="comment-input" type="text" placeholder="comment sth...">
+                    <span><i class="fas fa-paper-plane" onclick="postComment(${index})"></i></span>
+                    </div>
+                    ${renderComments(item.comments)}
                     </div>
                     </div>`
             }
@@ -384,32 +432,52 @@ function updateLocalStorage(list) {
 
 }
 
-function comments(index) {
+function comment(index) {
     let allCommentBoxes = document.querySelectorAll(".comment-box")
-    allCommentBoxes[index].style = "display:block"
+    allCommentBoxes[index].classList.toggle("disappear")
 
 }
 
-// function postComment(index) {
-//     let allCommentBoxes = document.querySelectorAll(".comment-box")
-//     let comment = {
-//         content: allCommentBoxes[index].value,
-//         username: username
-//     }
-//     quackList[index].comments.push(comment)
-//     allCommentBoxes[index].style = "display:none"
-//     updateLocalStorage(quackList)
-//     console.log(quackList, "after post")
-//     renderList(quackList)
-// }
+function postComment(index) {
+    let allCommentBoxes = document.querySelectorAll(".comment-input")
+    let comment = {
+        content: allCommentBoxes[index].value,
+        username: username,
+        avatar: avatar
+    }
+    quackList[index].comments.push(comment)
+    updateLocalStorage(quackList)
+    console.log(quackList, "after post")
+    renderList(quackList)
+    allCommentBoxes[index].classList.toggle("disappear")
+}
 
-// function renderComments(list) {
-//     function renderComment(elm) {
-//         console.log(elm)
-//         return ` <p>${elm.username}:${elm.content}</p>`
-//     }
-//     const commentNode = list.map(renderComment).join("")
-//     return commentNode
+function renderComments(list,quackIndex) {
+    function renderComment(item, index) {
+        return `
+        <div class="each-comment">
+        <div class="comment-user-info">
+        <div class="img-wrapper">
+        <img src="${item.avatar}">
+        </div>
+        </div>
+     
+        <div class="comment-content">
+        <span>${item.username}</span>
+        <p>${item.content}</p>
+        </div>
+        ${renderCommentAuthorize(item, index,quackIndex)}
+        </div>
+        `
+    }
+    const commentNode = list.map(renderComment).join("")
+    return commentNode
 
 
-// }
+}
+function deleteComment(index,quackIndex)
+{
+    console.log(index,quackIndex)
+let newList=quackList[quackIndex].comments.splice(index,1)
+renderComments(newList)
+}

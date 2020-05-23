@@ -62,6 +62,9 @@ h3 {
 }
 
 .searchBar {
+    width: 12vw;
+    min-width: 130px;
+    max-width: 200px;
     border: none;
     width: 200px;
     margin-top: 15px;
@@ -154,6 +157,7 @@ textarea {
     border-radius: 30px;
     padding: 20px;
     width: 100%;
+    
 }
 
 .qButton {
@@ -312,6 +316,10 @@ textarea {
     font-weight: 800;
     color: black;
 }
+i:hover
+{
+cursor: pointer;
+}
 
 .showLike {
     position: absolute;
@@ -324,4 +332,151 @@ textarea {
     color: black;
     display: none;
     list-style: none;
+}
+details summary::-webkit-details-marker {
+    display:none;
+}
+.disappear
+{
+    display: block !important;
+}
+
+.comment-box
+{
+    padding-top: 20px;
+    padding-left: 20px;
+    background: ivory;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    margin-left:130px;
+    width: 100%;
+    display: none;
+    margin-top: 20px;
+}
+.input-section
+{
+    display: flex;
+}
+.input-section .img-wrapper1
+{
+    
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+.input-section span
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: tomato;
+    margin-left: 10px;
+}
+.img-wrapper1 img
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+.each-comment
+{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+.each-comment .img-wrapper
+{
+    width: 50px;
+    height: 50px;
+}
+.each-comment .comment-content
+{
+    padding: 10px;
+    box-sizing: border-box;
+    width: 80%;
+}
+.each-comment .comment-user-info
+{
+    display: flex;
+    align-items: center;
+}
+.each-comment span
+{
+    font-size: 20px;
+    font-weight: 800;
+}
+.each-comment p
+{
+    margin-top: 10px;
+}
+@media (max-width: 1187px) {
+    h3 {
+        font-size: 20pt;
+        position: relative;
+        top: 20px;
+    }
+    h2 {
+        font-size: 14pt;
+    }
+    #navbar {
+        width: 160px;
+        padding:10px;
+        position: relative;
+        top: 40px;
+    }
+    .icon {
+        position: relative;
+        top: 10px;
+    }
+}
+
+@media (max-width: 1012px) {
+    h2,h3 {
+        display: none;
+    }
+    #navbar {
+        width: 40px;
+        position: relative;
+        top: 50px;
+    }
+    .icon {
+        margin-bottom: 30px;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 729px) {
+    .searchBar,#whoToFollow,#trending {
+        display: none;
+    }
+    .qAreaFormat, textarea {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 610px) {
+    .qAreaFormat, textarea {
+        width: 55vw;
+    }
+}
+
+@media (max-width: 450px) {
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+    .qAreaFormat, textarea {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 396px) {
+    .qButton {
+        width: 60px;
+        height: 30px;
+        font-size: 10pt;
+    }
+    #remain {
+        font-size: 10pt;
+    }
 }
