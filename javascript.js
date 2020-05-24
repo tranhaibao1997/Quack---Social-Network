@@ -443,6 +443,7 @@ function deleteQuack(id) {
 
 function editQuack(id) {
     document.getElementById("edit-window").style = "display:block"
+    document.getElementById("body-change").style = "display:block"
     let quack = quackList.filter(quack => quack.id == id)[0]
     editingQuack = quack
     console.log(editingQuack, "dsklfiudsfhndskjhfndjh")
@@ -464,6 +465,7 @@ function saveEditQuack() {
     updateLocalStorage(quackList)
     getTrending()
     document.getElementById("edit-window").style = "display:none"
+    document.getElementById("body-change").style = "display:none"
 
 }
 
@@ -595,4 +597,5 @@ document.getElementById("close-btn").addEventListener("click", () => {
 })
 document.getElementById("close-btn-edit").addEventListener("click", () => {
     document.getElementById("edit-window").style = "display:none"
+    document.getElementById("body-change").style = "display:none"
 })
