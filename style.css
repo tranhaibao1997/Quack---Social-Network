@@ -12,6 +12,10 @@
                                                 color: mediumvioletred;
                                                 font-size: 20px;
                                             }
+
+                                            #account:hover {
+                                                color: rgb(145, 28, 102);
+                                            }
                                             
                                             #navbar {
                                                 background-color: #fddc6e;
@@ -522,6 +526,43 @@
                                                 opacity: 0.5;
                                                 background-color: antiquewhite;
                                                 display: none;
+                                            }
+
+                                            footer {
+                                                background-color: rgb(63, 63, 63);
+                                                color: white;
+                                                position: fixed;
+                                                bottom: 0px;
+                                                left: 0px;
+                                                right: 0px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                height: 50px;
+                                            }
+
+                                            .numFormat {
+                                                font-family: "Lato", sans-serif;
+                                                margin-left: 8px;
+                                            }
+
+                                            #username {
+                                                background-color: #87d0e1;
+                                                margin-top: 30px;
+                                                font-size: 15pt;
+                                                width: 15vw;
+                                                padding: 10px;
+                                                text-align: center;
+                                                border-radius: 10px;
+                                            }
+
+                                            a {
+                                                text-decoration: none;
+                                                color: mediumvioletred;
+                                            }
+
+                                            a:hover {
+                                                color: rgb(145, 28, 102);
                                             }
                                             
                                             @media (max-width: 1500px) {

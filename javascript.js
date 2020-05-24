@@ -121,7 +121,7 @@ function rederTextArea() {
         if (currentUsername == "" & currentAvatar == "") {
             document.getElementById("username").innerHTML = `<a href="#">Sign up</a>`
         } else {
-            document.getElementById("username").innerHTML = `Hello <a onclick="changeAccount()" href="#" id="account">${currentUsername}</a>`
+            document.getElementById("username").innerHTML = `Hello, <a onclick="changeAccount()" href="#" id="account">${currentUsername}</a>!`
         }
     }
 
@@ -253,9 +253,9 @@ function renderList(list) {
                 <div class="quack-content">
                     <p>${item.reQuackComment}</p>
                     <div class="btn-section">
-                    <span onmouseover="showLike(${index})" onmouseout="hideLike(${index})" onclick="likeTweet(${index})"><i class="fas fa-star fa-lg iconFormat star">${item.likeBy.length}</i></span>
+                    <span onmouseover="showLike(${index})" onmouseout="hideLike(${index})" onclick="likeTweet(${index})"><i class="fas fa-star fa-lg iconFormat star"><span class="numFormat">${item.likeBy.length}</span></i></span>
                     <span onclick="reQuack(${index})"><i class="fas fa-retweet fa-lg iconFormat retweet"></i></span>
-                    <span onclick="comment(${index})"><i class="far fa-comment fa-lg iconFormat comment">${item.comments.length}</i></span>
+                    <span onclick="comment(${index})"><i class="far fa-comment fa-lg iconFormat comment"><span class="numFormat">${item.comments.length}</span></i></span>
                    ${renderAuthorize(item)}
                     </div>
                     <ul class="showLike">
@@ -305,9 +305,9 @@ function renderList(list) {
                 <div class="quack-content">
                     <p>${item.reQuackComment}</p>
                     <div class="btn-section">
-                    <span onmouseover="showLike(${index})" onmouseout="hideLike(${index})" onclick="likeTweet(${index})"><i class="far fa-star fa-lg iconFormat star">${item.likeBy.length}</i></span>
+                    <span onmouseover="showLike(${index})" onmouseout="hideLike(${index})" onclick="likeTweet(${index})"><i class="far fa-star fa-lg iconFormat star"><span class="numFormat">${item.likeBy.length}</span></i></span>
                     <span onclick="reQuack(${index})"><i class="fas fa-retweet fa-lg iconFormat retweet"></i></span>
-                    <span onclick="comment(${index})"><i class="far fa-comment fa-lg iconFormat comment">${item.comments.length}</i></span>
+                    <span onclick="comment(${index})"><i class="far fa-comment fa-lg iconFormat comment"><span class="numFormat">${item.comments.length}</span></i></span>
                    ${renderAuthorize(item)}
                     </div>
                     <ul class="showLike">
@@ -362,9 +362,9 @@ function renderList(list) {
                 <div class="quack-content">
                     <p>${item.content}</p>
                     <div class="btn-section">
-                    <span onmouseover="showLike(${index})" onmouseout="hideLike(${index})" onclick="likeTweet(${index})"><i class="fas fa-star fa-lg iconFormat star">${item.likeBy.length}</i></span>
+                    <span onmouseover="showLike(${index})" onmouseout="hideLike(${index})" onclick="likeTweet(${index})"><i class="fas fa-star fa-lg iconFormat star"><span class="numFormat">${item.likeBy.length}</span></i></span>
                     <span onclick="reQuack(${index})"><i class="fas fa-retweet fa-lg iconFormat retweet"></i></span>
-                    <span onclick="comment(${index})"><i class="far fa-comment fa-lg iconFormat comment">${item.comments.length}</i></span>
+                    <span onclick="comment(${index})"><i class="far fa-comment fa-lg iconFormat comment"><span class="numFormat">${item.comments.length}</span></i></span>
                    ${renderAuthorize(item)}
                     </div>
                     <ul class="showLike">
@@ -395,9 +395,9 @@ function renderList(list) {
                 <div class="quack-content">
                     <p>${item.content}</p>
                     <div class="btn-section">
-                    <span onmouseover="showLike(${index})" onmouseout="hideLike(${index})" onclick="likeTweet(${index})"><i class="far fa-star fa-lg iconFormat star">${item.likeBy.length}</i></span>
+                    <span onmouseover="showLike(${index})" onmouseout="hideLike(${index})" onclick="likeTweet(${index})"><i class="far fa-star fa-lg iconFormat star"><span class="numFormat">${item.likeBy.length}</span></i></span>
                     <span onclick="reQuack(${index})"><i class="fas fa-retweet fa-lg iconFormat retweet"></i></span>
-                    <span onclick="comment(${index})"><i class="far fa-comment fa-lg iconFormat comment">${item.comments.length}</i></span>
+                    <span onclick="comment(${index})"><i class="far fa-comment fa-lg iconFormat comment"><span class="numFormat">${item.comments.length}</span></i></span>
                     ${renderAuthorize(item)}
                     </div>
                     <ul class="showLike">
