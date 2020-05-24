@@ -1,17 +1,61 @@
-let quackList = [{"id":0,"username":"Bitna","avatar":"https://zicxa.com/hinh-anh/wp-content/uploads/2020/02/T%E1%BB%95ng-h%E1%BB%A3p-h%C3%ACnh-%E1%BA%A3nh-avatar-h%C3%A0i-h%C6%B0%E1%BB%9Bc-nh%C3%ACn-l%C3%A0-b%E1%BA%ADt-c%C6%B0%E1%BB%9Di-1.jpg","content":"<img src=\"https://thuthuatnhanh.com/wp-content/uploads/2020/02/anh-icon-dep-cute.jpg\" alt=\"image\" width=\"50px\" height=\"50px\">","isReQuacked":true,"isLiked":false,"reQuackLevel":1,"parents":0,"likeBy":[],"hashTag":[],"peopleTag":[],"comments":[],"originalUser":"Alyssa","originalUserAvatar":"https://img.lovepik.com/element/40125/9858.png_860.png","reQuackComment":" cute pic ^^"},{"id":0,"username":"Alyssa","avatar":"https://img.lovepik.com/element/40125/9858.png_860.png","content":"<img src=\"https://thuthuatnhanh.com/wp-content/uploads/2020/02/anh-icon-dep-cute.jpg\" alt=\"image\" width=\"50px\" height=\"50px\">","isReQuacked":false,"isLiked":false,"reQuackLevel":0,"likeBy":["Bitna"],"hashTag":[],"peopleTag":[],"comments":[{"content":"so cute","username":"Bitna","avatar":"https://zicxa.com/hinh-anh/wp-content/uploads/2020/02/T%E1%BB%95ng-h%E1%BB%A3p-h%C3%ACnh-%E1%BA%A3nh-avatar-h%C3%A0i-h%C6%B0%E1%BB%9Bc-nh%C3%ACn-l%C3%A0-b%E1%BA%ADt-c%C6%B0%E1%BB%9Di-1.jpg"}],"author":"Alyssa","parents":null},{"id":0,"username":"Bitna","avatar":"https://zicxa.com/hinh-anh/wp-content/uploads/2020/02/T%E1%BB%95ng-h%E1%BB%A3p-h%C3%ACnh-%E1%BA%A3nh-avatar-h%C3%A0i-h%C6%B0%E1%BB%9Bc-nh%C3%ACn-l%C3%A0-b%E1%BA%ADt-c%C6%B0%E1%BB%9Di-1.jpg","content":"<a href=\"#\" data-hashtag=#share onclick=\"filterHashTag(event)\">#share</a> \nArrow functions allows a short syntax for writing function expressions.","isReQuacked":false,"isLiked":false,"reQuackLevel":0,"likeBy":["haibaotran","Alyssa"],"hashTag":["#share"],"peopleTag":[],"comments":[{"content":"very helpful :D","username":"haibaotran","avatar":"https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg"}],"author":"Bitna","parents":null},{"id":1,"username":"haibaotran","avatar":"https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg","content":"<a href=\"#\" data-hashtag=#coderschool onclick=\"filterHashTag(event)\">#coderschool</a> We are in Week 4 - So fast ><","isReQuacked":false,"isLiked":false,"reQuackLevel":0,"likeBy":["haibaotran","Alyssa","Bitna"],"hashTag":["#coderschool"],"peopleTag":[],"comments":[{"content":"so fast...","username":"Alyssa","avatar":"https://img.lovepik.com/element/40125/9858.png_860.png"}],"author":"haibaotran","parents":null},{"id":1,"username":"haibaotran","avatar":"https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg","content":"<a href=\"#\" data-hashtag=#ask onclick=\"filterHashTag(event)\">#ask</a> what is React everyone ?","isReQuacked":false,"isLiked":false,"reQuackLevel":0,"likeBy":["Bitna","Alyssa"],"hashTag":["#ask"],"peopleTag":[],"comments":[{"content":"React JS is an open-source JavaScript library for building user interfaces – usually for single-page and mobile applications.","username":"Bitna","avatar":"https://zicxa.com/hinh-anh/wp-content/uploads/2020/02/T%E1%BB%95ng-h%E1%BB%A3p-h%C3%ACnh-%E1%BA%A3nh-avatar-h%C3%A0i-h%C6%B0%E1%BB%9Bc-nh%C3%ACn-l%C3%A0-b%E1%BA%ADt-c%C6%B0%E1%BB%9Di-1.jpg"},{"content":"very helpful","username":"Alyssa","avatar":"https://img.lovepik.com/element/40125/9858.png_860.png"}],"author":"haibaotran","parents":null},{"id":2,"username":"haibaotran","avatar":"https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg","content":"<a href=\"#\" data-hashtag=#coding onclick=\"filterHashTag(event)\">#coding</a> <a href=\"#\" data-hashtag=#fullstackweb onclick=\"filterHashTag(event)\">#fullstackweb</a> <a href=\"#\" data-hashtag=#coderschool onclick=\"filterHashTag(event)\">#coderschool</a> \nI am a web developer ","isReQuacked":false,"isLiked":false,"reQuackLevel":0,"likeBy":["haibaotran","Alyssa","Bitna"],"hashTag":["#coding","#fullstackweb","#coderschool"],"peopleTag":[],"comments":[{"content":"Me too !","username":"Alyssa","avatar":"https://img.lovepik.com/element/40125/9858.png_860.png"},{"content":"So am I ","username":"Bitna","avatar":"https://zicxa.com/hinh-anh/wp-content/uploads/2020/02/T%E1%BB%95ng-h%E1%BB%A3p-h%C3%ACnh-%E1%BA%A3nh-avatar-h%C3%A0i-h%C6%B0%E1%BB%9Bc-nh%C3%ACn-l%C3%A0-b%E1%BA%ADt-c%C6%B0%E1%BB%9Di-1.jpg"}],"author":"haibaotran","parents":null}]
-
+let quackList = []
 let maxInput = 100;
-let num = 0
 
-// let username = "Alyssa"
-// let avatar = "https://img.lovepik.com/element/40125/9858.png_860.png"
 
-let username="Bitna"
-let avatar="https://zicxa.com/hinh-anh/wp-content/uploads/2020/02/T%E1%BB%95ng-h%E1%BB%A3p-h%C3%ACnh-%E1%BA%A3nh-avatar-h%C3%A0i-h%C6%B0%E1%BB%9Bc-nh%C3%ACn-l%C3%A0-b%E1%BA%ADt-c%C6%B0%E1%BB%9Di-1.jpg"
 
-// let username = "haibaotran"
-// let avatar = "https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg"
 
+let currentUsername = "Bitna"
+let currentAvatar = "https://zicxa.com/hinh-anh/wp-content/uploads/2020/02/T%E1%BB%95ng-h%E1%BB%A3p-h%C3%ACnh-%E1%BA%A3nh-avatar-h%C3%A0i-h%C6%B0%E1%BB%9Bc-nh%C3%ACn-l%C3%A0-b%E1%BA%ADt-c%C6%B0%E1%BB%9Di-1.jpg"
+
+
+let userList = [{
+    "username": "Alyssa",
+    "avatar": "https://img.lovepik.com/element/40125/9858.png_860.png"
+},
+{
+    "username": "Bitna",
+    "avatar": "https://zicxa.com/hinh-anh/wp-content/uploads/2020/02/T%E1%BB%95ng-h%E1%BB%A3p-h%C3%ACnh-%E1%BA%A3nh-avatar-h%C3%A0i-h%C6%B0%E1%BB%9Bc-nh%C3%ACn-l%C3%A0-b%E1%BA%ADt-c%C6%B0%E1%BB%9Di-1.jpg"
+},
+{
+    "username": "haibaotran",
+    "avatar": "https://thumbs.dreamstime.com/b/happy-smiling-geek-hipster-beard-man-cool-avatar-geek-man-avatar-104871313.jpg"
+}
+]
+
+function renderAccountList() {
+    let anotherAccounts = userList.filter(user => user.username !== currentUsername)
+    let list = anotherAccounts.map(elm => `<li data-account="${elm.username}" data-avatar="${elm.avatar}" onclick="loginAnother(event)">
+    <div class="img-wrapper1">
+    <img src="${elm.avatar}">
+    </div>
+    <span>${elm.username}</span>
+    </li>`).join("")
+    let html = ` 
+    <i class="fas fa-window-close" id="close-btn"></i>
+    <div class="current-account">
+    <div class="img-wrapper">
+        <img src="${currentAvatar}" alt="">
+    </div>
+    <p id="currentUserName">${currentUsername}</p>
+</div>
+<div class="another-account-list">
+    <ul>
+        ${list}
+    </ul>
+</div>`
+    document.getElementById("change-account").innerHTML = html
+}
+
+function loginAnother(event) {
+    
+    currentUsername = event.target.attributes[0].nodeValue;
+    currentAvatar = event.target.attributes[1].nodeValue;
+    rederTextArea()
+    renderList(quackList)
+    renderAccountList()
+    document.getElementById("change-account").style = "display:none";
+    document.getElementById("body-change").style = "display:none"
+}
 
 function getTrending() {
 
@@ -50,24 +94,17 @@ function getTrending() {
     </li>`)).join("")
     document.getElementById("trending-section").innerHTML = html
 }
-getTrending()
 
-
-
-renderList(quackList)
-
-
-//render textarea
 function rederTextArea() {
-    if (username == "" && avatar == "") {
+    if (currentUsername == "" && currentAvatar == "") {
         return ``
     }
     else {
-        return `
+        let html = `
 
         <div class="profile-info">
          <div class="img-wrapper">
-             <img class="profile-avatar" src="${avatar}" alt="img">
+             <img class="profile-avatar" src="${currentAvatar}" alt="img">
          </div>
          </div>
      
@@ -81,16 +118,22 @@ function rederTextArea() {
      
      
       `
+        document.getElementById("quack-input").innerHTML = html
+        if (currentUsername == "" & currentAvatar == "") {
+            document.getElementById("username").innerHTML = `<a href="#">Sign up</a>`
+        }
+        else {
+            document.getElementById("username").innerHTML = `Hello <a onclick="changeAccount()" href="#" id="account">${currentUsername}</a>`
+        }
     }
 
 }
-document.getElementById("quack-input").innerHTML = rederTextArea()
-if (username == "" & avatar == "") {
-    document.getElementById("username").innerHTML = `<a href="#">Sign up</a>`
-}
-else {
-    document.getElementById("username").innerHTML = `Hello <a onclick="changeAccount()" href="#" id="account">${username}</a>`
-}
+
+rederTextArea()
+getTrending()
+renderList(quackList)
+renderAccountList()
+
 
 
 
@@ -137,9 +180,9 @@ function post() {
     }).join(" ");
     console.log(message.split(" "))
     let quack = {
-        'id': num,
-        "username": username,
-        "avatar": avatar,
+        'id': Math.random() * 100000000,
+        "username": currentUsername,
+        "avatar": currentAvatar,
         "content": newMessage,
         "isReQuacked": false,
         "isLiked": false,
@@ -148,10 +191,9 @@ function post() {
         "hashTag": hashTag,
         "peopleTag": peopleTag,
         "comments": comments,
-        "author": username,
+        "author": currentUsername,
         'parents': null,
     }
-    num++
     quackList.unshift(quack)
     document.getElementById("input").value = ""
     document.getElementById("remain").innerHTML = ""
@@ -161,14 +203,14 @@ function post() {
 }
 
 function renderAuthorize(item) {
-    if (item.username == username) {
+    if (item.username == currentUsername) {
         return `<span onclick="deleteQuack(${item.id})"><i class="fas fa-trash-alt fa-lg iconFormat trash"></i></span>`
     } else {
         return ``
     }
 }
 function renderCommentAuthorize(item, index, quackIndex) {
-    if (item.username == username) {
+    if (item.username == currentUsername) {
         return `<span onclick="deleteComment(${index, quackIndex})"><i class="fas fa-trash-alt fa-lg iconFormat trash"></i></span>`
     } else {
         return `<span style="opacity:0"><i class="fas fa-trash-alt fa-lg iconFormat trash"></i></span>`
@@ -195,7 +237,7 @@ function hideLike(index) {
 function renderList(list) {
     function renderElm(item, index) {
         if (item.isReQuacked) {
-            if (item.likeBy.findIndex(name => name == username) !== -1) {
+            if (item.likeBy.findIndex(name => name == currentUsername) !== -1) {
                 return ` <div class="requack-area">
                 <div class="qAreaFormat">
                 <div class="quack-info">
@@ -221,7 +263,7 @@ function renderList(list) {
                  <div class="comment-box">
                 <div class="input-section">
                 <div class="img-wrapper1">
-                <img src="${avatar}">
+                <img src="${currentAvatar}">
                 </div>
                 <input class="comment-input" type="text" placeholder="comment sth...">
                 <span><i class="fas fa-paper-plane" onclick="postComment(${index})"></i></span>
@@ -271,7 +313,7 @@ function renderList(list) {
                 <div class="comment-box">
                 <div class="input-section">
                 <div class="img-wrapper1">
-                <img src="${avatar}">
+                <img src="${currentAvatar}">
                 </div>
                 <input class="comment-input" type="text" placeholder="comment sth...">
                 <span><i class="fas fa-paper-plane" onclick="postComment(${index})"></i></span>
@@ -302,7 +344,7 @@ function renderList(list) {
 
 
         } else if (!item.isReQuacked) {
-            if (item.likeBy.findIndex(name => name == username) !== -1) {
+            if (item.likeBy.findIndex(name => name == currentUsername) !== -1) {
 
                 //item is liked
 
@@ -328,7 +370,7 @@ function renderList(list) {
                     <div class="comment-box">
                     <div class="input-section">
                     <div class="img-wrapper1">
-                    <img src="${avatar}">
+                    <img src="${currentAvatar}">
                     </div>
                     <input class="comment-input" type="text" placeholder="comment sth...">
                     <span><i class="fas fa-paper-plane" onclick="postComment(${index})"></i></span>
@@ -361,7 +403,7 @@ function renderList(list) {
                     <div class="comment-box">
                     <div class="input-section">
                     <div class="img-wrapper1">
-                    <img src="${avatar}">
+                    <img src="${currentAvatar}">
                     </div>
                     <input class="comment-input" type="text" placeholder="comment sth...">
                     <span><i class="fas fa-paper-plane" onclick="postComment(${index})"></i></span>
@@ -384,8 +426,8 @@ function renderList(list) {
 function deleteQuack(id) {
     let deletedNumber = id
     let newArray = quackList.filter(elm => {
-        console.log(id,"deletenumber")
-        console.log(quackList,"list")
+        console.log(id, "deletenumber")
+        console.log(quackList, "list")
         if (elm.id == deletedNumber || elm.parents == deletedNumber) { return false }
         return true
     })
@@ -396,12 +438,12 @@ function deleteQuack(id) {
 }
 
 function likeTweet(index) {
-    if (quackList[index].likeBy.findIndex(name => name == username) !== -1) {
-        let likedUserNameIndex = quackList[index].likeBy.findIndex(name => name == username)
+    if (quackList[index].likeBy.findIndex(name => name == currentUsername) !== -1) {
+        let likedUserNameIndex = quackList[index].likeBy.findIndex(name => name == currentUsername)
         quackList[index].likeBy.splice(likedUserNameIndex, 1)
 
     } else {
-        quackList[index].likeBy.push(username)
+        quackList[index].likeBy.push(currentUsername)
         renderList(quackList)
     }
     renderList(quackList)
@@ -423,9 +465,9 @@ function findOriginalUserAvatar(index) {
 function reQuack(index) {
     var reQuackComment = prompt("Comment for this Quack", " ");
     let quack = {
-        "id": num,
-        "username": username,
-        "avatar": avatar,
+        "id": Math.random() * 100000000,
+        "username": currentUsername,
+        "avatar": currentAvatar,
         "content": quackList[index].content,
         "isReQuacked": true,
         "isLiked": false,
@@ -439,7 +481,6 @@ function reQuack(index) {
         "originalUserAvatar": findOriginalUserAvatar(index),
         "reQuackComment": reQuackComment
     }
-    num++
     quackList.unshift(quack)
     renderList(quackList)
     updateLocalStorage(quackList)
@@ -474,8 +515,8 @@ function postComment(index) {
     let allCommentBoxes = document.querySelectorAll(".comment-input")
     let comment = {
         content: allCommentBoxes[index].value,
-        username: username,
-        avatar: avatar
+        username: currentUsername,
+        avatar: currentAvatar
     }
     quackList[index].comments.push(comment)
     updateLocalStorage(quackList)
@@ -512,3 +553,12 @@ function deleteComment(index, quackIndex) {
     let newList = quackList[quackIndex].comments.splice(index, 1)
     renderComments(newList)
 }
+
+function changeAccount() {
+    document.getElementById("body-change").style = "display:block"
+    document.getElementById("change-account").style = "display:block"
+}
+document.getElementById("close-btn").addEventListener("click", () => {
+    document.getElementById("change-account").style = "display:none";
+    document.getElementById("body-change").style = "display:none"
+})
