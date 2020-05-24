@@ -6,6 +6,7 @@
                                                 background-color: #fec728;
                                                 font-family: "Lato", sans-serif;
                                                 margin: 0;
+                                                position: relative;
                                             }
                                             
                                             #account {
@@ -48,6 +49,7 @@
                                                 justify-content: space-between;
                                                 width: 80%;
                                                 margin: 0 auto;
+                                                padding-bottom: 80px;
                                             }
                                             
                                             .edit {
@@ -56,7 +58,7 @@
                                             
                                             .save-edit {
                                                 margin-left: 30px;
-                                                font-size: 40px;
+                                                font-size: 30px !important;
                                                 color: orangered;
                                             }
                                             
@@ -531,7 +533,7 @@
                                             footer {
                                                 background-color: rgb(63, 63, 63);
                                                 color: white;
-                                                position: fixed;
+                                                position: absolute;
                                                 bottom: 0px;
                                                 left: 0px;
                                                 right: 0px;
@@ -678,6 +680,10 @@
                                                     height: 50px;
                                                     DISPLAY: flex;
                                                 }
+                                                .change-account {
+                                                    position: fixed;
+                                                    width: 45%;
+                                                }
                                                 .logo {
                                                     position: relative;
                                                     top: 50px;
@@ -708,7 +714,7 @@
                                                 }
                                                 .fas .far {}
                                                 .iconFormat {
-                                                    font-size: 10px !important;
+                                                    font-size: 20px !important;
                                                     margin: unset;
                                                 }
                                                 @media (max-width: 450px) {
